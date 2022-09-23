@@ -140,7 +140,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/GradienceTeam/Gradience.git",
-                    "commit": "523d96967ce5c861fd113cb6db0f2f610ed7c3c2"
+                    "tag": "0.3.0"
                 }
             ]
         }
