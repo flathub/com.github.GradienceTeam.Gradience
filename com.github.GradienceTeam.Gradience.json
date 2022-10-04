@@ -1,19 +1,24 @@
 {
-    "app-id": "com.github.GradienceTeam.Gradience",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
-    "sdk": "org.gnome.Sdk",
-    "command": "gradience",
-    "finish-args": [
+    "app-id" : "com.github.GradienceTeam.Gradience",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "43",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "gradience",
+    "finish-args" : [
         "--share=network",
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland",
+        "--filesystem=xdg-data/flatpak/overrides:create",
         "--filesystem=xdg-config/gtk-3.0",
-        "--filesystem=xdg-config/gtk-4.0"
+        "--filesystem=xdg-config/gtk-4.0",
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--talk-name=ca.desrt.dconf",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
-    "cleanup": [
+    "cleanup" : [
         "/include",
         "/lib/pkgconfig",
         "/man",
@@ -24,7 +29,8 @@
         "*.la",
         "*.a"
     ],
-    "modules": [
+    "modules" : [
+        "pypi-dependencies.json",
         {
             "name": "python-lxml",
             "buildsystem": "simple",
@@ -40,42 +46,44 @@
                 }
             ]
         },
-        "pypi-dependencies.json",
         {
-            "name": "blueprint-compiler",
-            "buildsystem": "meson",
-            "sources": [
+            "name" : "blueprint-compiler",
+            "buildsystem" : "meson",
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-                    "tag": "v0.2.0"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+                    "tag" : "v0.4.0"
                 }
             ]
         },
         {
-            "name": "libadwaita",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dvapi=false",
-                "-Dtests=false",
-                "-Dexamples=false",
-                "-Dintrospection=enabled"
-            ],
+            "name": "sassc",
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/libadwaita.git",
-                    "tag": "1.2.beta"
+                    "url": "https://github.com/sass/sassc.git",
+                    "tag": "3.6.2"
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "autogen.sh",
+                    "commands": [
+                        "autoreconf -si"
+                    ]
                 }
+            ],
+            "cleanup": [
+                "*"
             ],
             "modules": [
                 {
-                    "name": "sassc",
+                    "name": "libsass",
                     "sources": [
                         {
                             "type": "git",
-                            "url": "https://github.com/sass/sassc.git",
-                            "tag": "3.6.2"
+                            "url": "https://github.com/sass/libsass.git",
+                            "tag": "3.6.5"
                         },
                         {
                             "type": "script",
@@ -87,28 +95,6 @@
                     ],
                     "cleanup": [
                         "*"
-                    ],
-                    "modules": [
-                        {
-                            "name": "libsass",
-                            "sources": [
-                                {
-                                    "type": "git",
-                                    "url": "https://github.com/sass/libsass.git",
-                                    "tag": "3.6.5"
-                                },
-                                {
-                                    "type": "script",
-                                    "dest-filename": "autogen.sh",
-                                    "commands": [
-                                        "autoreconf -si"
-                                    ]
-                                }
-                            ],
-                            "cleanup": [
-                                "*"
-                            ]
-                        }
                     ]
                 }
             ]
@@ -130,13 +116,13 @@
             ]
         },
         {
-            "name": "gradience",
-            "builddir": true,
-            "buildsystem": "meson",
+            "name" : "gradience",
+            "builddir" : true,
+            "buildsystem" : "meson",
             "config-opts": [
                 "-Dbuildtype=release"
             ],
-            "sources": [
+            "sources" : [
                 {
                     "type": "git",
                     "url": "https://github.com/GradienceTeam/Gradience.git",
