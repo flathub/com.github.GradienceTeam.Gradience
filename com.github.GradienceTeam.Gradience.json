@@ -107,7 +107,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/GradienceTeam/Gradience.git",
-                    "tag": "0.3.1"
+                    "branch": "libportal-removal"
                 }
             ]
         }
