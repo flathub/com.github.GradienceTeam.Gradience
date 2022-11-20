@@ -12,7 +12,11 @@
         "--socket=wayland",
         "--filesystem=xdg-data/flatpak/overrides:create",
         "--filesystem=xdg-config/gtk-3.0",
-        "--filesystem=xdg-config/gtk-4.0"
+        "--filesystem=xdg-config/gtk-4.0",
+        "--filesystem=~/.mozilla/firefox",
+        "--filesystem=~/.librewolf",
+        "--filesystem=~/.var/app/org.mozilla.firefox/.mozilla/firefox",
+        "--filesystem=~/.var/app/io.gitlab.librewolf-community/.librewolf"
     ],
     "cleanup" : [
         "/include",
@@ -122,7 +126,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/GradienceTeam/Gradience.git",
-                    "tag": "0.3.0"
+                    "commit": "e743a4f8f90fa147743519feb4b2d441bcfba40a"
                 }
             ]
         }
