@@ -60,11 +60,6 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/70/bb/7a2c7b4f8f434aa1ee801704bf08f1e53d7b5feba3d5313ab17003477808/lxml-4.9.1.tar.gz",
-                    "sha256": "fe749b052bb7233fe5d072fcb549221a8cb1a16725c47c37e42b0b9cb3ff2c3f"
-                },
-                {
-                    "type": "file",
                     "url": "https://files.pythonhosted.org/packages/b8/ac/10d68a650b321bd8c4d8cbefd9994e7727d57b381c9bdb0a013273011e62/reportlab-3.6.12.tar.gz",
                     "sha256": "b13cebf4e397bba14542bcd023338b6ff2c151a3a12aabca89eecbf972cb361a"
                 },
