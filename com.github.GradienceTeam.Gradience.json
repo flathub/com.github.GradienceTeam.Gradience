@@ -14,6 +14,7 @@
         "--filesystem=xdg-config/gtk-3.0",
         "--filesystem=xdg-config/gtk-4.0",
         "--filesystem=xdg-run/gvfsd",
+        "--filesystem=xdg-download:ro",
         "--filesystem=~/.mozilla/firefox",
         "--filesystem=~/.librewolf",
         "--filesystem=~/.var/app/org.mozilla.firefox/.mozilla/firefox",
@@ -42,8 +43,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/lxml/lxml/releases/download/lxml-4.9.1/lxml-4.9.1.tar.gz",
-                    "sha256": "fe749b052bb7233fe5d072fcb549221a8cb1a16725c47c37e42b0b9cb3ff2c3f"
+                    "url": "https://github.com/lxml/lxml/releases/download/lxml-4.9.1/lxml-4.9.2.tar.gz",
+                    "sha256": "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
                 }
             ]
         },
@@ -54,7 +55,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-                    "tag" : "v0.4.0"
+                    "tag" : "v0.6.0"
                 }
             ]
         },
@@ -127,7 +128,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/GradienceTeam/Gradience.git",
-                    "tag": "0.3.3"
+                    "tag": "0.4.0"
                 }
             ]
         }
