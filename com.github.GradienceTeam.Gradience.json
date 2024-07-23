@@ -4,6 +4,7 @@
     "runtime-version" : "44",
     "sdk" : "org.gnome.Sdk",
     "command" : "gradience",
+    "end-of-life": "This application is no longer maintained.",
     "finish-args" : [
         "--share=network",
         "--share=ipc",
