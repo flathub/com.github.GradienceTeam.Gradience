@@ -1,0 +1,52 @@
+From 0fc0d662bcb7be19e5c6e68b628fa92e889f3906 Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Mon, 5 Aug 2024 01:33:27 +0300
+Subject: [PATCH] Fix appdata papercuts
+
+---
+ data/com.github.GradienceTeam.Gradience.appdata.xml.in.in | 10 +---------
+ data/com.github.GradienceTeam.Gradience.desktop.in.in     |  2 +-
+ 2 files changed, 2 insertions(+), 10 deletions(-)
+
+diff --git a/data/com.github.GradienceTeam.Gradience.appdata.xml.in.in b/data/com.github.GradienceTeam.Gradience.appdata.xml.in.in
+index 69840a0..d9a2f7b 100644
+--- a/data/com.github.GradienceTeam.Gradience.appdata.xml.in.in
++++ b/data/com.github.GradienceTeam.Gradience.appdata.xml.in.in
+@@ -20,7 +20,7 @@
+     </ul>
+   </description>
+   <screenshots>
+-    <screenshot>
++    <screenshot type="default">
+       <caption>Screenshot of "Colors" Tab of Main UI</caption>
+       <image type="source">https://raw.githubusercontent.com/GradienceTeam/Design/main/Screenshots/Appdata/main-ui-colors.png</image>
+     </screenshot>
+@@ -203,14 +203,6 @@
+   <categories>
+     <category>Utility</category>
+   </categories>
+-  <requires>
+-    <display_length compare="ge">small</display_length>
+-    <display_length compare="le">small</display_length>
+-  </requires>
+-  <recommends>
+-    <display_length compare="ge">small</display_length>
+-    <display_length compare="le">small</display_length>
+-  </recommends>
+   <supports>
+     <control>pointing</control>
+     <control>keyboard</control>
+diff --git a/data/com.github.GradienceTeam.Gradience.desktop.in.in b/data/com.github.GradienceTeam.Gradience.desktop.in.in
+index f2310aa..a080cc9 100644
+--- a/data/com.github.GradienceTeam.Gradience.desktop.in.in
++++ b/data/com.github.GradienceTeam.Gradience.desktop.in.in
+@@ -4,5 +4,5 @@ Exec=gradience
+ Icon=@APP_ID@
+ Terminal=false
+ Type=Application
+-Categories=GTK;
++Categories=Utility;
+ StartupNotify=true
+--
+libgit2 1.7.2
+
