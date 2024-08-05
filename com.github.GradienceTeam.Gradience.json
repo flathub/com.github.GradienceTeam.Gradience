@@ -132,6 +132,10 @@
                     "type": "git",
                     "url": "https://github.com/GradienceTeam/Gradience.git",
                     "tag": "0.4.1-patch1"
+                },
+                {
+                    "type": "patch",
+                    "path": "fix-appdata.patch"
                 }
             ]
         }
